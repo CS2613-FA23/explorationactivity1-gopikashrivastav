@@ -22,13 +22,15 @@ print("B = {}".format(B))
 #calculate the region of interest by slicing pixels of the image
 roi = image[100 : 500, 200 : 700]
 
-#resize() function takes 2 parameters
+#resize() function takes 2 parametersc
 #the image and the dimensions
 resize = cv2.resize(image, (800, 800))
 h, w = image.shape[:2]
 print("Height = {}, Width = {}".format(h, w))
 
+#opens image 
 cv2.imshow("image", image)
+#waitKey(0) means image is open until you close it.
 cv2.waitKey(0)
 
 cv2.destroyAllWindows()
