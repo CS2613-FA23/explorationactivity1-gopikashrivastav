@@ -21,11 +21,14 @@
 3. What purpose does your program serve?
 
         The program utilises the Hand Land Mark Model in MediaPipe [picture below] to create a program that tracks the hand movement in real time using the webcam. It also displays frames per second on the live stream, along with the locations of the hands on the terminal. This program can be further developed to detect hands and their movements in live-streams to be used for purposes such as a VR without needing controllers.
-        hand-landmarks.png
+<img width="1073" alt="hand-landmarks" src="https://github.com/CS2613-FA23/explorationactivity1-gopikashrivastav/assets/126816880/3d26ae16-9aa3-475d-b591-ef2de3a5e8a4">
+
+   
+        
         [2]
 
         
-4. What would be some sample input/output?
+5. What would be some sample input/output?
 
     The input is the live webcam feed that tracks hand movements including fingers and wrists, and the output is the location detection.
 
