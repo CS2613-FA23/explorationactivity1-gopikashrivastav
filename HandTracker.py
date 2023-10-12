@@ -3,11 +3,12 @@ import mediapipe as mp
 import time
 import numpy as np 
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 
 mpHands = mp.solutions.hands
 hands = mpHands.Hands()
 mpDraw = mp.solutions.drawing_utils
+
 
 pTime = 0 #prev time is 0
 cTime = 0 #curr time is 0
@@ -48,4 +49,11 @@ while True:
 
     cv2.imshow("Image", img)
     cv2.waitKey(1)
+
+
+    
+
+
+
+
 
