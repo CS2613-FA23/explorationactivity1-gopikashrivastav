@@ -35,6 +35,5 @@
 
 References:
 [1]: https://opencv.org/about/#:~:text=OpenCV%20
-(Open%20Source%20Computer%20Vision,and%20machine%20learning%20software%20library.
 
 [2]: https://developers.google.com/mediapipe/solutions/vision/hand_landmarker
