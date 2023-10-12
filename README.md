@@ -37,3 +37,7 @@ References:
 [1]: https://opencv.org/about/#:~:text=OpenCV%20
 
 [2]: https://developers.google.com/mediapipe/solutions/vision/hand_landmarker
+
+Basic Understanding of hand tracking: 
+
+https://www.youtube.com/watch?v=NZde8Xt78Iw&ab_channel=Murtaza%27sWorkshop-RoboticsandAI

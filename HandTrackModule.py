@@ -5,7 +5,7 @@ import numpy as np
 
 
 class handDetector():
-    print("hiii")
+
     def __init__(self, mode=False, maxHands = 2, modelC=1,detectionCon = 0.5, trackCon = 0.5):
         self.mode = mode
         self.maxHands = maxHands
@@ -17,8 +17,6 @@ class handDetector():
         self.hands = self.mpHands.Hands(self.mode, self.maxHands, self.modelC, self.detectionCon, self.trackCon)
         self.mpDraw = mp.solutions.drawing_utils 
 
-        print("hello")
-    print("yo")
 
     def findHands(self, img, draw=True):
         #converting to rgb 
@@ -33,7 +31,7 @@ class handDetector():
                 #multiply by width and height to get pixel
                 if draw:
                     self.mpDraw.draw_landmarks(img, handLms, self.mpHands.HAND_CONNECTIONS)
-                    #not utilized atm
+                    
 
         return img       
 
@@ -50,22 +48,25 @@ class handDetector():
                         #print(id, cx, cy)
                         landMarkList.append([id, cx, cy])
                         #In Hand Landmark Model, id=0 is wrist, id=4 is thumb_tip
+                        #Drawing a circle on the tip of thumb and index finger 
                         if draw:
                             cv2.circle(img, (cx, cy), 15, (255, 0, 255), cv2.FILLED)
                             #mpHands.HANDCONNECTIONS draws connecting lines
+                            if id == 4:
+                                cv2.circle(img, (cx, cy), 15, (0, 0, 255), cv2.FILLED)
+                            if id == 8:
+                                cv2.circle(img, (cx, cy), 15, (0, 0, 255), cv2.FILLED)
+
 
         return landMarkList
 
 def main():
 
-    pTime = 0 #prev time is 0
-    cTime = 0 #curr time is 0
-    print("hi")
+    prevTime = 0 #prev time is 0
+    currTime = 0 #curr time is 0
 
     cap = cv2.VideoCapture(0)
     detector = handDetector()
-
-    print("hi")
 
     while True:
         success, img = cap.read()
@@ -75,9 +76,9 @@ def main():
         if len(lmList)!= 0:
             print(lmList[4])
             
-        cTime = time.time() #gets current time
-        fps = 1/(cTime-pTime) #getting frames per second
-        pTime = cTime
+        currTime = time.time() #gets current time
+        fps = 1/(currTime-prevTime) #getting frames per second
+        prevTime = currTime
 
         #displaying fps on live stream
         #Syntax: cv2.putText(image, text to display, position, font, scale, colour(RGB), thickness)

@@ -38,8 +38,14 @@
 
 • Snippets of code and examples of output should be given here.
 
+    [refer to samplecv.py for code snippets]
+
+
+
 
 4. When was it created?
+
+    Officially launched in 1999 the OpenCV project was initially an Intel Research initiative to advance CPU-intensive applications, part of a series of projects including real-time ray tracing and 3D display walls.
 
 
 5. Why did you select this package/library?
